@@ -20,7 +20,10 @@ jobs:
         run: |
           echo "${{ secrets.SFDX_AUTH_URL_DEVHUB }}" > authUrl.txt
           sfdx auth:sfdxurl:store -f authUrl.txt -a DevHub
-          
+
+      - name: 🔍 Verify Authenticated Orgs
+        run: sfdx force:org:list
+        
       - name: 📦 Auto-commit changes (if any)
         run: |
           git config --global user.email "abhijeetgole@gmail.com"
