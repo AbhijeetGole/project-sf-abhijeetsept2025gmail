@@ -19,8 +19,8 @@ jobs:
       - name: 🔐 Authenticate Dev Hub
         run: |
           echo "${{ secrets.SFDX_AUTH_URL_DEVHUB }}" > authUrl.txt
-          sfdx force:source:deploy -p force-app -u ${{ secrets.SF_USERNAME }}
-
+          sfdx auth:sfdxurl:store -f authUrl.txt -a DevHub
+          
       - name: 📦 Auto-commit changes (if any)
         run: |
           git config --global user.email "abhijeetgole@gmail.com"
