@@ -1,9 +1,0 @@
-<aura:component implements="flexipage:availableForAllPageTypes"> 
-    <aura:attribute name="selectedHotelRoomInfo" type="Object" /> 
-    <!-- wrapper lwc for pubsub --> 
-    <c:pubSubAuraLWC aura:id="pubSubModule" onready="{!c.subscribeToEvent}"/> 
-    <lightning:card title="SelectedHotelRoom-Aura"> 
-        <h3> You have selected: <b>{!v.selectedHotelRoomInfo.roomName}</b> 
-        </h3> <h4> Room Capacity: <b>{!v.selectedHotelRoomInfo.roomCapacity}</b> 
-        </h4> </lightning:card> 
-</aura:component>

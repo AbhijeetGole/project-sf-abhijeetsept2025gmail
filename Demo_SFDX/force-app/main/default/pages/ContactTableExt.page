@@ -1,9 +1,0 @@
-<apex:page standardController="Contact" extensions="ContactExtension">
-    <apex:pageBlock title="Contact List">
-        <apex:pageBlockTable value="{!contacts}" var="c">
-            <apex:column value="{!c.FirstName}"/>
-            <apex:column value="{!c.LastName}"/>
-            <apex:column value="{!c.Email}"/>
-        </apex:pageBlockTable>
-    </apex:pageBlock>
-</apex:page>

@@ -1,8 +1,0 @@
-<aura:component implements="flexipage:availableForAllPageTypes" 
-                access="global" >
-	<h1>Hello World from First Aura Component!</h1>
-    <p>
-        <h1>Heading of the Paragraph!</h1>
-        <p>Simple Para!</p>
-    </p>
-</aura:component>

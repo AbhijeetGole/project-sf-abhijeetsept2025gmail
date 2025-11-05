@@ -1,3 +1,0 @@
-<apex:page standardController="Contact">
-    <c:ContactSummaryComponent contact="{!Contact}" />
-</apex:page>
