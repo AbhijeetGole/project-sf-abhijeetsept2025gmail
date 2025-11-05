@@ -20,7 +20,7 @@ jobs:
         run: |
           echo "${{ secrets.SFDX_AUTH_URL_DEVHUB }}" > authUrl.txt
           cat authUrl.txt  # Optional debug
-          sfdx auth:sfdxurl:store -f authUrl.txt -a DevHub
+          sfdx force:auth:sfdxurl:store -f authUrl.txt -a DevHub
 
       - name: 📦 Auto-commit changes (if any)
         run: |
