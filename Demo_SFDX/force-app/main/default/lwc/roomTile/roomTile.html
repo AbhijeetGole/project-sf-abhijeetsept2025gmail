@@ -1,0 +1,41 @@
+<template>
+  <div class="slds-card slds-p-around_medium slds-m-around_x-small slds-box">
+    <!-- Media block for room info -->
+    <div class="slds-media slds-media_center slds-media_small">
+      <div class="slds-media__figure">
+        <lightning-icon
+          icon-name="utility:company"
+          alternative-text="Meeting Room"
+          size="medium"
+          variant="success"
+        ></lightning-icon>
+      </div>
+      <div class="slds-media__body">
+        <h2 class="slds-text-heading_small slds-truncate">{room.roomName}</h2>
+        <p class="slds-text-body_regular">Capacity: {room.roomCapacity}</p>
+      </div>
+    </div>
+
+    <!-- Separate block for button -->
+    <div class="slds-m-top_medium slds-align_absolute-center">
+      <lightning-button
+        label="Book Room"
+        variant="brand"
+        onclick={handleClick}
+      ></lightning-button>
+    </div>
+  </div>
+</template>
+
+
+<!-- <template>
+  <div class="tile" onclick={handleClick}>
+    <h2>{room.roomName}</h2>
+    <p>Capacity: {room.roomCapacity}</p>
+    <lightning-button
+      label="Book Room"
+      variant="brand"
+      onclick={handleClick}
+    ></lightning-button>
+  </div>
+</template> -->

@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Account Record Form!"></lightning-card>
+    <!-- modes - readonly - for only viewing the record, cannot make form editable. 
+    view - for viewing the record, but can make form editable. 
+    edit - for editing the record, clicking on sake button see the form in view mode. 
+    layout-type - Full and Compact. -->
+        <!-- <lightning-record-form object-api-name="Account" record-id={recordId}
+    mode="view" layout-type="Full" columns="2"></lightning-record-form> -->
+    <lightning-record-form object-api-name="Account" record-id={recordId} mode="readonly" layout-type="Compact"
+        columns="2"></lightning-record-form>
+    <!-- <lightning-record-form object-api-name="Account" record-id={recordId} mode="edit" 
+layout-type="Full" columns="2" onsuccess={handleSucces}></lightning-record-form> -->
+</template>

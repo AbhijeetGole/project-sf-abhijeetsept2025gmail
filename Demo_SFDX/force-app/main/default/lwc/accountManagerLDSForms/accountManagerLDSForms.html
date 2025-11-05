@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="LDS Forms"></lightning-card> \
+    <lightning-layout>
+        <lightning-layout-item size="6" padding="around-small">
+             <lightning-record-view-form object-api-name="Account" record-id={recordId}>
+                    <div class="slds-box">
+                        <p>
+                            <lightning-output-field field-name="Name"></lightning-output-field>
+                        </p>
+                        <p>
+                            <lightning-output-field field-name="Phone"></lightning-output-field>
+                        </p>
+                        <p>
+                            <lightning-output-field field-name="Website"></lightning-output-field>
+                        </p>
+                    </div>
+                </lightning-record-view-form>
+            </lightning-layout-item>
+    </lightning-layout>
+</template>

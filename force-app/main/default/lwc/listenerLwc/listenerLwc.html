@@ -1,0 +1,9 @@
+<template>
+  <lightning-card title="LWC Listener">
+    <template for:each={messages} for:item="msg">
+      <div key={msg.id}>
+        <strong>{msg.from}</strong>: {msg.message}
+      </div>
+    </template>
+  </lightning-card>
+</template>

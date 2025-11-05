@@ -1,0 +1,10 @@
+.date-label {
+    color: maroon;
+    font-weight: bold;
+}
+
+ul.slds-list_dotted li {
+    color: #600000;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}

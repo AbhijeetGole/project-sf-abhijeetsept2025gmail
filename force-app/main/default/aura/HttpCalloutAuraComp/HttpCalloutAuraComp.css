@@ -1,0 +1,33 @@
+/* Style the date heading */
+.THIS h1 {
+    color: #0070d2; /* SLDS brand blue */
+    margin: 0 0 1rem 0;
+    font-size: xx-large;
+    font-weight: 600;
+}
+
+.THIS p.slds-text-heading_medium {
+    color: #0070d2; /* SLDS brand blue */
+    font-weight: 600;
+}
+
+.THIS p.slds-text-heading_medium strong {
+    color: maroon; /* Neutral dark for label */
+}
+
+/* Style the currency list items */
+.THIS li {
+    color: #600000; /* Deep maroon for contrast */
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Optional: add spacing around the card */
+.THIS .slds-card {
+    margin: 1rem;
+}
+
+/* Optional: enhance button spacing */
+.THIS .slds-no-flex lightning:button {
+    margin-left: 1rem;
+}

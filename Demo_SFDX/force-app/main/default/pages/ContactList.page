@@ -1,0 +1,20 @@
+<apex:page standardController="Contact" recordSetVar="contacts">
+    <h1>Contact Directory</h1>
+
+    <apex:form >
+        <apex:pageBlock title="Contacts">
+            <apex:pageBlockTable value="{!contacts}" var="c">
+                <apex:column value="{!c.FirstName}" />
+                <apex:column value="{!c.LastName}" />
+                <apex:column value="{!c.Email}" />
+                <apex:column value="{!c.Phone}" />
+                <apex:column value="{!c.MailingCity}" />
+            </apex:pageBlockTable>
+
+            <apex:panelGrid columns="2">
+                <apex:commandLink value="Previous" action="{!previous}" rendered="{!hasPrevious}"/>
+                <apex:commandLink value="Next" action="{!next}" rendered="{!hasNext}"/>
+            </apex:panelGrid>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

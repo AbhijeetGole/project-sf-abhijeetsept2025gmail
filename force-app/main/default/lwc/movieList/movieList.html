@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Movies Display" icon-name="standard:video">
+        <div class="slds-p-around_medium">
+            <lightning-input type="checkbox" label="Show Movie List" checked={showList} onchange={handleCheckboxChange}></lightning-input>
+        </div>
+
+        <template if:true={showList}>
+            <div class="slds-box slds-box_xx-small slds-m-around_medium slds-scrollable_y" style="max-height: 200px;">
+                <template for:each={movies} for:item="movie">
+                    <div key={movie.id} class="slds-m-bottom_x-small">
+                        <lightning-button variant="brand-outline" label={movie.movieName} onclick={handleMovieSelect} data-id={movie.id} class="slds-button_stretch"></lightning-button>
+                    </div>
+                </template>
+            </div>
+        </template>
+
+        <template if:true={selectedMovie}>
+            <div class="slds-m-top_medium">
+                <c-movie-comp
+                    movie-name={selectedMovie.movieName}
+                    release-year={selectedMovie.releaseYear}
+                    genre={selectedMovie.genre}>
+                </c-movie-comp>
+            </div>
+        </template>
+    </lightning-card>
+</template>

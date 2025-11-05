@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Record Editor">
+        <lightning-record-edit-form object-api-name={objectApiName} record-id={recordId}>
+            <lightning-input-field field-name="Name"></lightning-input-field>
+            <template if:true={isAccount}>
+                <lightning-input-field field-name="Industry"></lightning-input-field>
+            </template>
+            <template if:true={isContact}>
+                <lightning-input-field field-name="Email"></lightning-input-field>
+            </template>
+            <template if:true={isOpportunity}>
+                <lightning-input-field field-name="StageName"></lightning-input-field>
+            </template>
+            <lightning-button type="submit" label="Save" variant="brand"></lightning-button>
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>

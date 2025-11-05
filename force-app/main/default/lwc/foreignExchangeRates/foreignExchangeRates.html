@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Foreign Exchange Rates" icon-name="utility:currency">
+        <div class="slds-p-horizontal_medium">
+            <div class="slds-grid slds-grid_align-end">
+                <lightning-button
+                    variant="brand"
+                    label="Show Foreign Exchange Rates - LWC!"
+                    onclick={handleClick}>
+                </lightning-button>
+            </div>
+
+            <template if:true={response}>
+                <p class="slds-text-heading_medium slds-m-top_medium">
+                    <strong class="date-label">Date:</strong> {response.time_last_update_utc}
+                </p>
+                <ul class="slds-list_dotted slds-m-top_small">
+                    <template for:each={listOfCurrency} for:item="rate">
+                        <li key={rate}>{rate}</li>
+                    </template>
+                </ul>
+            </template>
+        </div>
+    </lightning-card>
+</template>

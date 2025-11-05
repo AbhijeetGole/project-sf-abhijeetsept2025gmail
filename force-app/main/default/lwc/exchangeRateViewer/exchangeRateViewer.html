@@ -1,0 +1,52 @@
+<template>
+    <lightning-card title="USD to Currency Exchange Rate" icon-name="utility:currency">
+        <div class="slds-p-around_medium">
+
+            <lightning-input
+                label="Enter Target Currency Code (e.g., INR, EUR)"
+                value={targetCurrency}
+                onchange={handleCurrencyChange}>
+            </lightning-input>
+
+
+            <!-- Dropdown for selecting currency -->
+            <lightning-combobox
+                name="currency"
+                label="Select Target Currency"
+                value={targetCurrency}
+                placeholder="Choose a currency"
+                options={currencyOptions}
+                onchange={handleCurrencyChange}>
+            </lightning-combobox>
+
+            <!-- Display selected currency -->
+            <p class="slds-m-top_small">
+                <strong>Selected Currency:</strong> {targetCurrency}
+            </p>
+
+            <!-- Button -->
+            <div class="slds-grid slds-grid_align-end slds-m-top_small">
+                <lightning-button
+                    variant="brand"
+                    label="Get Rate"
+                    onclick={handleClick}>
+                </lightning-button>
+            </div>
+
+            <!-- Result -->
+            <template if:true={exchangeRate}>
+                <p class="slds-text-heading_medium slds-m-top_medium">
+                    <strong>Rate:</strong> {exchangeRate}
+                </p>
+                <p>
+                    <strong>Last Updated:</strong> {date}
+                </p>
+            </template>
+
+            <!-- Error -->
+            <template if:true={error}>
+                <p class="slds-text-color_error slds-m-top_medium">{error}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

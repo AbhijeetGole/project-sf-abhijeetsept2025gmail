@@ -1,0 +1,12 @@
+<template>
+    <template if:true={showRoomInfo}>
+        <div>
+            <lightning-tile label={hotelRoomInfo.roomName}
+            onclick={selectTileHandler}>
+                <div class="slds-media__body">
+                    <p>Room Capacity: {hotelRoomInfo.roomCapacity}</p>
+                </div>
+            </lightning-tile>
+        </div>
+    </template>
+</template>

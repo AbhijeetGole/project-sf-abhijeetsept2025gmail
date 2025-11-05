@@ -1,0 +1,12 @@
+<apex:page >
+  <apex:includeLightning />
+  <apex:slds />
+
+  <div id="themeSwitcherContainer" class="slds-box slds-m-around_medium"></div>
+
+  <script>
+    $Lightning.use("c:AuraOutApp", function() {
+      $Lightning.createComponent("c:themeSwitcherLwc", {}, "themeSwitcherContainer");
+    });
+  </script>
+</apex:page>

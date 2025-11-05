@@ -1,0 +1,18 @@
+<apex:page >
+    <apex:includeLightning />
+
+    <div id="lwcContainer"></div>
+
+    <script>
+        $Lightning.use("c:listenerApp", function() {
+            $Lightning.createComponent(
+                "c:listenerLwc",
+                {},
+                "lwcContainer",
+                function(cmp) {
+                    console.log("LWC Listener loaded in Visualforce");
+                }
+            );
+        });
+    </script>
+</apex:page>

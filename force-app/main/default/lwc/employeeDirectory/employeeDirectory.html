@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Employee Directory" icon-name="standard:employee">
+        <div class="slds-p-around_medium">
+            <lightning-input type="search" label="Search by Name" onchange={handleSearch}></lightning-input>
+        </div>
+
+        <lightning-datatable
+            key-field="id"
+            data={filteredEmployees}
+            columns={columns}
+            hide-checkbox-column="true"
+            sorted-by={sortedBy}
+            sorted-direction={sortedDirection}
+            onsort={handleSort}>
+        </lightning-datatable>
+    </lightning-card>
+</template>

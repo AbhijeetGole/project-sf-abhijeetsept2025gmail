@@ -1,0 +1,21 @@
+:host {
+  display: block;
+  padding: 1.5rem;
+  background: linear-gradient(to right, #e0f7fa, #fce4ec);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+lightning-button {
+  margin-top: 1rem;
+  width: 60%;
+  font-weight: bold;
+  --slds-c-button-color-background: #0070d2;
+  --slds-c-button-text-color: white;
+  transition: transform 0.2s ease-in-out;
+}
+
+lightning-button:hover {
+  transform: scale(1.05);
+}

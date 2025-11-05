@@ -1,0 +1,11 @@
+<template>
+  <lightning-card title="Employee Card View">
+    <template if:true={employees.length}>
+      <template for:each={employees} for:item="emp">
+        <lightning-tile key={emp.id} label={emp.name}>
+          <p>Role: {emp.role}</p>
+        </lightning-tile>
+      </template>
+    </template>
+  </lightning-card>
+</template>

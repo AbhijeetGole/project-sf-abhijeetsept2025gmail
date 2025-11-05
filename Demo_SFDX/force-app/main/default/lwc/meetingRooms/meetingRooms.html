@@ -1,0 +1,88 @@
+<template>
+  <!-- Available Rooms -->
+  <lightning-card title="Available Meeting Rooms">
+    <div class="room-list">
+      <template for:each={availableRooms} for:item="room">
+        <c-room-tile
+          key={room.roomName}
+          room={room}
+          onbookroom={handleRoomBooking}
+        ></c-room-tile>
+      </template>
+      <template if:true={noRooms}>
+        <p class="slds-p-around_medium nmsg">No rooms available.</p>
+      </template>
+    </div>
+  </lightning-card>
+
+  <!-- Booked Rooms -->
+  <lightning-card title="Booked Meeting Rooms">
+  <div class="room-list">
+    <template for:each={bookedRooms} for:item="room">
+      <div key={room.roomName} class="slds-card slds-p-around_medium slds-m-around_x-small slds-box">
+        <div class="slds-media slds-media_center slds-media_small">
+          <div class="slds-media__figure">
+            <lightning-icon
+              icon-name="utility:company"
+              alternative-text="Booked"
+              size="medium"
+              variant="error"
+            ></lightning-icon>
+          </div>
+          <div class="slds-media__body">
+            <h2 class="slds-text-heading_small slds-truncate">{room.roomName}</h2>
+            <p class="slds-text-body_regular">Capacity: {room.roomCapacity}</p>
+          </div>
+        </div>
+
+        <div class="slds-m-top_medium slds-align_absolute-center">
+          <lightning-button
+            label="Cancel"
+            variant="destructive"
+            data-room-name={room.roomName}
+            onclick={handleCancelBooking}
+          ></lightning-button>
+        </div>
+      </div>
+    </template>
+
+    <template if:true={noBookedRooms}>
+      <p class="slds-p-around_medium nmsg">No rooms booked yet.</p>
+    </template>
+  </div>
+</lightning-card>
+</template>
+
+
+<!-- <template>
+  
+  <lightning-card title="Available Meeting Rooms">
+    <div class="room-list">
+      <template for:each={availableRooms} for:item="room">
+        <c-room-tile
+          key={room.roomName}
+          room={room}
+          onbookroom={handleRoomBooking}
+        ></c-room-tile>
+      </template>
+      <template if:true={noRooms}>
+        <p class="slds-p-around_medium">No rooms available.</p>
+      </template>
+    </div>
+  </lightning-card>
+
+  
+  <lightning-card title="Booked Meeting Rooms">
+    <div class="room-list">
+      <template for:each={bookedRooms} for:item="room">
+        <div key={room.roomName} class="tile booked slds-p-around_medium slds-box">
+          <h2 class="slds-text-heading_small">{room.roomName}</h2>
+          <p class="slds-text-body_regular">Capacity: {room.roomCapacity}</p>
+        </div>
+      </template>
+      <template if:true={noBookedRooms}>
+        <p class="slds-p-around_medium">No rooms booked yet.</p>
+      </template>
+    </div>
+  </lightning-card>
+</template> -->

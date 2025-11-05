@@ -1,0 +1,23 @@
+/* Align input and button with spacing */
+.input-section {
+    margin-bottom: 1rem;
+}
+
+/* Style the result section */
+.result-section {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Error message styling */
+.error-message {
+    color: #c23934; /* SLDS error red */
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+/* Optional: Add subtle card shadow */
+.slds-card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

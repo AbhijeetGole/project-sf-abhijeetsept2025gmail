@@ -1,0 +1,27 @@
+:host {
+  display: block;
+  padding: 1.5rem;
+  background: linear-gradient(to bottom right, #f5f7fa, #e8f0fe);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+lightning-tile {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+lightning-tile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+p {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 0.5rem;
+}

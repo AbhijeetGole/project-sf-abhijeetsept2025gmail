@@ -1,0 +1,18 @@
+<template> 
+    <lightning-card title="Hotel Rooms"></lightning-card> 
+    <lightning-layout> 
+        <lightning-layout-item size="4" padding="around-small"> 
+            <ul> 
+                <template for:each={hotelRoomsInfo} for:item="room"> 
+                    <li key={room}> 
+                       <c-hotel-room hotel-room-info={room} show-room-info ontileclick={tileClickHandler}></c-hotel-room> 
+                    </li> 
+                </template> 
+            </ul> 
+        </lightning-layout-item> 
+        <lightning-layout-item size="8" padding="around-small"> 
+            <h1>Room Name {selectedHotelRoom.roomName}</h1> 
+            <h3>Room Capacity {selectedHotelRoom.roomCapacity}</h3> 
+        </lightning-layout-item> 
+    </lightning-layout> 
+</template>

@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Record Stats Viewer">
+        <lightning-combobox
+            label="Select Object"
+            value={selectedObject}
+            options={objectOptions}
+            onchange={handleObjectChange}>
+        </lightning-combobox>
+
+        <template if:true={stats}>
+            <p>Total Records: {stats.total}</p>
+            <template for:each={stats.statusBreakdown} for:item="item">
+                <p key={item.label}>{item.label}: {item.count}</p>
+            </template>
+        </template>
+
+        <lightning-button label="Refresh" onclick={fetchStats} variant="brand"></lightning-button>
+    </lightning-card>
+</template>

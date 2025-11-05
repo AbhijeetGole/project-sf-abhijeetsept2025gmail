@@ -1,0 +1,10 @@
+<apex:component >
+    <apex:attribute name="contact" type="Contact" description="Contact record to display" required="true" />
+    
+    <apex:outputPanel >
+        <h3>Contact Summary</h3>
+        <p>Name: {!contact.FirstName} {!contact.LastName}</p>
+        <p>Email: {!contact.Email}</p>
+        <p>Phone: {!contact.Phone}</p>
+    </apex:outputPanel>
+</apex:component>
