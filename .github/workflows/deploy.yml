@@ -16,16 +16,11 @@ jobs:
       - name: 🛠 Install Salesforce CLI
         run: npm install -g sfdx-cli
 
-      - name: 🔐 Authenticate to Salesforce
-        run: |
-          echo "Authenticating..."
-          sfdx force:auth:web:login \
-            --setalias DevHub \
-            --instanceurl ${{ secrets.SF_LOGIN_URL }} \
-            --clientid ${{ secrets.SF_CLIENT_ID }} \
-            --clientsecret ${{ secrets.SF_CLIENT_SECRET }} \
-            --username ${{ secrets.SF_USERNAME }}
+      - name: Authenticate Dev Hub
+        run: echo "${{ secrets.SFDX_AUTH_URL_DEVHUB }}" > authUrl.txt
 
+      - run: sfdx auth:sfdxurl:store -f authUrl.txt -a DevHub
+      
       - name: 📦 Add & Commit Changes
         run: |
           git config --global user.email "abhijeetgole@gmail.com"
