@@ -1,0 +1,39 @@
+name: Salesforce CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
+
+      - name: 🛠 Install Salesforce CLI
+        run: npm install -g sfdx-cli
+
+      - name: 🔐 Authenticate to Salesforce
+        run: |
+          echo "Authenticating..."
+          sfdx force:auth:web:login \
+            --setalias DevHub \
+            --instanceurl ${{ secrets.SF_LOGIN_URL }} \
+            --clientid ${{ secrets.SF_CLIENT_ID }} \
+            --clientsecret ${{ secrets.SF_CLIENT_SECRET }} \
+            --username ${{ secrets.SF_USERNAME }}
+
+      - name: 📦 Add & Commit Changes
+        run: |
+          git config --global user.email "abhijeetgole@gmail.com"
+          git config --global user.name "Abhijeet Gole"
+          git add .
+          git diff-index --quiet HEAD || git commit -m "Auto-commit: New changes detected"
+          git push origin main
+
+      - name: 🚀 Deploy to Salesforce
+        run: |
+          sfdx force:source:deploy -p force-app -u ${{ secrets.SF_USERNAME }} --testlevel RunLocalTests
