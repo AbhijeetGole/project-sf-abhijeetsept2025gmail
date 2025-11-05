@@ -22,9 +22,6 @@ jobs:
           cat authUrl.txt  # Optional debug
           sfdx auth:sfdxurl:store -f authUrl.txt -a DevHub
 
-      - name: 🔍 Verify Authenticated Orgs
-        run: sfdx force:org:list
-        
       - name: 📦 Auto-commit changes (if any)
         run: |
           git config --global user.email "abhijeetgole@gmail.com"
