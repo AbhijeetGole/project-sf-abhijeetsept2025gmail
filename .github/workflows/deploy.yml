@@ -13,28 +13,21 @@ jobs:
       - name: 📥 Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Git credentials
-        run: |
-          git config --global user.email "abhijeetgole@gmail.com"
-          git config --global user.name "Abhijeet Gole"
-          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/AbhijeetGole/project-sf-abhijeetsept2025gmail.git
-          git push origin main
-          
       - name: 🛠 Install Salesforce CLI
         run: npm install -g sfdx-cli
 
-      - name: Authenticate Dev Hub
-        run: echo "${{ secrets.SFDX_AUTH_URL_DEVHUB }}" > authUrl.txt
+      - name: 🔐 Authenticate Dev Hub
+        run: |
+          echo "${{ secrets.SFDX_AUTH_URL_DEVHUB }}" > authUrl.txt
+          sfdx auth:sfdxurl:store -f authUrl.txt -a DevHub
 
-      - name: Store Auth URL
-        run: sfdx auth:sfdxurl:store -f authUrl.txt -a DevHub
-
-      - name: 📦 Add & Commit Changes
+      - name: 📦 Auto-commit changes (if any)
         run: |
           git config --global user.email "abhijeetgole@gmail.com"
           git config --global user.name "Abhijeet Gole"
           git add .
           git diff-index --quiet HEAD || git commit -m "Auto-commit: New changes detected"
+          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/AbhijeetGole/project-sf-abhijeetsept2025gmail.git
           git push origin main
         continue-on-error: true
 
