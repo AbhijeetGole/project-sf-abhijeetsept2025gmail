@@ -26,8 +26,8 @@ jobs:
         run: echo "${{ secrets.SFDX_AUTH_URL_DEVHUB }}" > authUrl.txt
 
       - name: Store Auth URL
-      - run: sfdx auth:sfdxurl:store -f authUrl.txt -a DevHub
-      
+        run: sfdx auth:sfdxurl:store -f authUrl.txt -a DevHub
+
       - name: 📦 Add & Commit Changes
         run: |
           git config --global user.email "abhijeetgole@gmail.com"
@@ -35,7 +35,9 @@ jobs:
           git add .
           git diff-index --quiet HEAD || git commit -m "Auto-commit: New changes detected"
           git push origin main
+        continue-on-error: true
 
       - name: 🚀 Deploy to Salesforce
         run: |
           sfdx force:source:deploy -p force-app -u ${{ secrets.SF_USERNAME }} --testlevel RunLocalTests
+``
