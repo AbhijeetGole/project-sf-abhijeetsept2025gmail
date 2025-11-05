@@ -33,4 +33,4 @@ jobs:
 
       - name: 🚀 Deploy to Salesforce
         run: |
-          sfdx force:source:deploy -p force-app -u ${{ secrets.SF_USERNAME }} --testlevel RunLocalTests
+            sfdx force:source:deploy -p force-app -u DevHub --testlevel RunLocalTests
