@@ -19,6 +19,7 @@ jobs:
       - name: 🔐 Authenticate Dev Hub
         run: |
           echo "${{ secrets.SFDX_AUTH_URL_DEVHUB }}" > authUrl.txt
+          cat authUrl.txt  # Optional debug
           sfdx auth:sfdxurl:store -f authUrl.txt -a DevHub
 
       - name: 🔍 Verify Authenticated Orgs
